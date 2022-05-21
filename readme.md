@@ -15,11 +15,12 @@ var NeiAnimation = require('nei-animation');
 import 'nei-animation/style.css'
 ```
 
-### Add the `data-nei="animate"` to any element you wish to animate
-```html
-<h1 data-nei="animate">This sentence will be animated word for word.</h1>
-```
+### Add data attributes
+The main attribute is the `data-nei` attribute, here you define what animation you want upon visibility (see the commands section):
 
+```html
+<h1 data-nei="show-text">This sentence will be animated word for word.</h1>
+```
 
 ### Initiate the NeiAnimation class
 ```html
@@ -30,3 +31,19 @@ let animate = new NeiAnimation({
 </script>
 
 ```
+# Attributes
+
+All available attributes
+| Attribute    | Example                | Usage                     |
+|--------------|------------------------|---------------------------|
+| `data-nei`   | `data-nei="show-text"` | Set the desired animation |
+| `data-delay` | `data-nei-delay="200"` | Set delay in miliseconds  |
+
+## Animation attributes
+These are the attribute values that can be used for the `data-nei` attribute:
+
+| Attribute | Example                | Usage                            |
+|-----------|------------------------|----------------------------------|
+| show-text | `data-nei="show-text"` | Animates text word for word      |
+| fade-up   | `data-nei="fade-left"` | Animates element from left       |
+| fade-left | `data-nei="fade-up"`   | Animates element from down to up |
