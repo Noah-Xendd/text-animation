@@ -24,36 +24,43 @@ class NeiAnimation {
   // Handle the scroll
   // Go through all elements to check if one is visible
   handleScroll() {
-    // let elements = this.settings.elements;
     let self = this;
-    let textAnimationElements = document.querySelectorAll('[data-nei="showText"]');
+    let textAnimationElements = document.querySelectorAll('[data-nei="show-text"]');
     let tiltAnimationElements = document.querySelectorAll('[data-nei="tilt"]');
     let fadeUpAnimationElements = document.querySelectorAll('[data-nei="fade-up"]');
     let fadeLeftAnimationElements = document.querySelectorAll('[data-nei="fade-left"]');
 
-    textAnimationElements.forEach((element) => {
-      let el = element;
+    if (textAnimationElements) {
+      textAnimationElements.forEach((element) => {
+        let el = element;
 
-      self.isVisible(el, "showText");
-    });
+        self.isVisible(el, "showText");
+      });
+    }
 
-    tiltAnimationElements.forEach((element) => {
-      let el = element;
+    if (tiltAnimationElements) {
+      tiltAnimationElements.forEach((element) => {
+        let el = element;
 
-      self.isVisible(el, "tilt");
-    });
+        self.isVisible(el, "tilt");
+      });
+    }
 
-    fadeUpAnimationElements.forEach((element) => {
-      let el = element;
+    if (fadeUpAnimationElements) {
+      fadeUpAnimationElements.forEach((element) => {
+        let el = element;
 
-      self.isVisible(el, "fadeUp");
-    });
+        self.isVisible(el, "fadeUp");
+      });
+    }
 
-    fadeLeftAnimationElements.forEach((element) => {
-      let el = element;
+    if (fadeLeftAnimationElements) {
+      fadeLeftAnimationElements.forEach((element) => {
+        let el = element;
 
-      self.isVisible(el, "fadeLeft");
-    });
+        self.isVisible(el, "fadeLeft");
+      });
+    }
   }
 
   isVisible(el, type) {
@@ -172,12 +179,12 @@ class NeiAnimation {
         self.settings.seperatedFullStop == null
       ) {
         var updatedWord = `
-              <span class="animate_word_preperation">${word}</span>   
-          `;
+                <span class="animate_word_preperation">${word}</span>   
+            `;
       } else {
         var updatedWord = `
-              <span class="animate_word_preperation">${word}</span> 
-          `;
+                <span class="animate_word_preperation">${word}</span> 
+            `;
       }
 
       // Append new word to the new sentence
@@ -206,7 +213,7 @@ class NeiAnimation {
 
     // Cycle through each word in the sentence to add class with animation
     for (let i = 0; i < el.childNodes[0].childNodes.length; i++) {
-      await self.sleep(100);
+      await self.sleep(wordAppearSpeed);
 
       if (el.childNodes[0].childNodes[i].className == "animate_word_preperation") {
         el.childNodes[0].childNodes[i].classList.add("animate_word_1");
