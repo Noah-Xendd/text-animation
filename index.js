@@ -22,11 +22,14 @@ class NeiAnimation {
   // Handle the scrol
   // Go through all elements to check if one is visible
   handleScroll() {
-    let elements = this.settings.elements;
+    // let elements = this.settings.elements;
     let self = this;
-
+    let elements = document.querySelectorAll('[data-nei="animate"]');
+    
     elements.forEach((element) => {
-      let el = document.querySelector(element);
+     
+      let el = element;
+      
       self.isVisible(el)
     })
   }
@@ -100,8 +103,7 @@ class NeiAnimation {
 
     let newSentence = '<div class="animate_container">';
 
-    // console.log(words)
-
+    
     // Go through each word and add a span with individual class
     words.forEach((word, key) => {
 
@@ -109,7 +111,7 @@ class NeiAnimation {
       if (this.settings.seperatedFullStop == true) {
         if (Object.is(words.length - 2, key)) {
           var updatedWord = `<span class="animate_word_preperation">${word}</span>`;
-          console.log('last!')
+         
         } else {
           var updatedWord = `<span class="animate_word_preperation">${word}</span> `;
         }
@@ -151,7 +153,7 @@ class NeiAnimation {
       await new Promise(r => setTimeout(r, wordAppearSpeed));
 
       if (el.childNodes[0].childNodes[i].className == "animate_word_preperation") {
-        
+    
         el.childNodes[0].childNodes[i].classList.add("animate_word_1")
         el.childNodes[0].childNodes[i].style.top = "0px";
 
@@ -160,5 +162,6 @@ class NeiAnimation {
     }
   }
 }
+
 
 module.exports = NeiAnimation;
