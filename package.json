@@ -1,0 +1,19 @@
+{
+  "name": "nei-animation",
+  "version": "1.0.13",
+  "description": "A simple, light-weight text animation package to animate each word separately on scroll visibility.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noah-Xendd/text-animation.git"
+  },
+  "author": "Noah Imamkhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Noah-Xendd/text-animation/issues"
+  },
+  "homepage": "https://github.com/Noah-Xendd/text-animation#readme"
+}

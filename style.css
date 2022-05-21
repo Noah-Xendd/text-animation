@@ -1,0 +1,18 @@
+.animate_sentence {
+  position: absolute;
+}
+
+/*  */
+.animate_word_preperation {
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.15, 0.55, 0.26, 1.1);
+  top: 60px;
+  opacity: 0;
+}
+
+/* When word is active */
+.animate_word_preperation.animate_word_1 {
+  transition: all 0.5s cubic-bezier(0.15, 0.55, 0.26, 1.1);
+  top: 0px;
+  opacity: 1;
+}
