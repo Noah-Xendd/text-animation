@@ -88,7 +88,7 @@ class NeiAnimation {
     const s = parser.parseFromString(sentence, 'text/html');
     let words = [];
 
-    
+
     for (let ell of s.body.firstChild.childNodes) {
       if (ell.nodeType == 3 /* TEXT_NODE */) {
         words = words.concat(ell.nodeValue.trim().split(' ').filter(Boolean));
@@ -97,17 +97,33 @@ class NeiAnimation {
         words.push(ell.outerHTML);
       }
     }
-    
+
     let newSentence = '<div class="animate_container">';
 
     // console.log(words)
 
     // Go through each word and add a span with individual class
-    words.forEach((word) => {
-      let updatedWord = `
+    words.forEach((word, key) => {
+
+      // Second last word does not need space because of full-stop
+      if (this.settings.seperatedFullStop == true) {
+        if (Object.is(words.length - 2, key)) {
+          var updatedWord = `<span class="animate_word_preperation">${word}</span>`;
+          console.log('last!')
+        } else {
+          var updatedWord = `<span class="animate_word_preperation">${word}</span> `;
+        }
+      } else if (this.settings.seperatedFullStop == false) {
+
+        var updatedWord = `
             <span class="animate_word_preperation">${word}</span> 
         `;
-   
+      } else {
+        var updatedWord = `
+            <span class="animate_word_preperation">${word}</span> 
+        `;
+      }
+
       // Append new word to the new sentence
       newSentence += updatedWord;
     });
@@ -124,7 +140,7 @@ class NeiAnimation {
   async animateElement(el) {
 
     // Adding global class to the whole sentence to create lift effect
-    
+
     el.childNodes[0].classList.add('animate_sentence');
 
     let self = this;
@@ -135,7 +151,7 @@ class NeiAnimation {
       await new Promise(r => setTimeout(r, wordAppearSpeed));
 
       if (el.childNodes[0].childNodes[i].className == "animate_word_preperation") {
-        // el.childNodes[0].childNodes[i].classList.remove("animate_word_preperation")
+        
         el.childNodes[0].childNodes[i].classList.add("animate_word_1")
         el.childNodes[0].childNodes[i].style.top = "0px";
 
@@ -144,7 +160,5 @@ class NeiAnimation {
     }
   }
 }
-
-
 
 module.exports = NeiAnimation;

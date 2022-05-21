@@ -1,8 +1,9 @@
 {
   "name": "nei-animation",
-  "version": "1.0.13",
+  "version": "1.0.17",
   "description": "A simple, light-weight text animation package to animate each word separately on scroll visibility.",
   "main": "index.js",
+  "keywords": ["scroll animation", "animation", "animation on scroll", "appear animation", "word scroll animation"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

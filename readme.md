@@ -4,7 +4,13 @@ A simple, light-weight text animation package to animate each word separately on
 
 [![Image from Gyazo](https://i.gyazo.com/7660e613bce8596989375d81818b2033.gif)](https://gyazo.com/7660e613bce8596989375d81818b2033)
 # Usage 
+```js
+// require package
+var NeiAnimation = require('nei-animation');
 
+// Require css styling
+import 'nei-animation/style.css'
+```
 ```html
 <h1 id="title1">This sentence will be animated word for word.</h1>
 ```
