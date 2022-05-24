@@ -1,7 +1,7 @@
 /*
     Author: Noah Imamkhan.
     Package name: nei-animation
-    Version: 1.0.27
+    Version: 1.0.28
     GitHub link: https://github.com/Noah-Xendd/text-animation
 */
 
@@ -144,6 +144,7 @@ class NeiAnimation {
   // Disect the sentence to make each word have scroll animation
   disectTextAnimationSentence(el) {
     el.style.position = "relative";
+    el.style.width = "100%";
 
     // Set current height before absolute
     let height = el.clientHeight;
