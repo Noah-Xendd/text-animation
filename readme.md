@@ -59,3 +59,9 @@ These are the attribute values that can be used for the `data-nei` attribute:
 # Issues
 
 Feel free to report any issues on GitHub [here](https://github.com/Noah-Xendd/text-animation/issues).
+
+# Discord
+
+Join the discord server to ask for help, report fixes or suggest new features.
+
+[![Discord](https://ps.w.org/wp-discord-post/assets/icon-256x256.png?rev=1641166)](https://discord.gg/WgvfWJGZkR)

@@ -1,6 +1,7 @@
 /*
     Author: Noah Imamkhan.
     Package name: nei-animation
+    Version: 1.0.27
     GitHub link: https://github.com/Noah-Xendd/text-animation
 */
 
@@ -93,7 +94,6 @@ class NeiAnimation {
     if (this.checkIfSentenceAlreadyAnimated(el) == true) {
       return;
     } else {
-      // el.classList.add("hide_animation");
       el.setAttribute("data-nei-animation-id", Math.floor(Math.random()) * 9); // Needs to be here BEFORE disecting, or it breaks
       this.disectTextAnimationSentence(el);
     }
@@ -106,7 +106,7 @@ class NeiAnimation {
     }
 
     el.setAttribute("data-nei-animation-id", Math.floor(Math.random()) * 9);
-    el.classList.add("hide_animation");
+
     this.animateTiltElement(el);
   }
 
@@ -117,7 +117,7 @@ class NeiAnimation {
     }
 
     el.setAttribute("data-nei-animation-id", Math.floor(Math.random()) * 9);
-    el.classList.add("hide_animation");
+
     this.animateFadeUpElement(el);
   }
 
@@ -128,7 +128,7 @@ class NeiAnimation {
     }
 
     el.setAttribute("data-nei-animation-id", Math.floor(Math.random()) * 9);
-    el.classList.add("hide_animation");
+
     this.animateFadeLeftElement(el);
   }
 
@@ -136,6 +136,8 @@ class NeiAnimation {
   checkIfSentenceAlreadyAnimated(el) {
     if (el.hasAttribute("data-nei-animation-id")) {
       return true;
+    } else {
+      el.classList.add("hide_animation");
     }
   }
 
@@ -199,10 +201,6 @@ class NeiAnimation {
 
   // Animate the element by adding classes to each word
   async animateTextElement(el) {
-    // if (el.hasAttribute("data-nei-delay")) {
-    //   await this.sleep(el.getAttribute("data-nei-delay"));
-    // }
-
     el.classList.remove("hide_animation");
     // Adding global class to the whole sentence to create lift effect
 
