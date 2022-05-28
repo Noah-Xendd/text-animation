@@ -1,7 +1,7 @@
 /*
     Author: Noah Imamkhan.
     Package name: nei-animation
-    Version: 1.0.28
+    Version: 1.0.29
     GitHub link: https://github.com/Noah-Xendd/text-animation
 */
 
@@ -13,6 +13,9 @@ class NeiAnimation {
     // Get instance of class (to load methods in anonymous functions)
     let self = this;
 
+    // Hide all elements before showing
+    this.hideAllElementsByDefault();
+
     // Load initial startup (no scroll yet)
     this.handleScroll();
 
@@ -20,6 +23,42 @@ class NeiAnimation {
     window.addEventListener("scroll", function () {
       self.handleScroll();
     });
+  }
+
+  hideAllElementsByDefault() {
+    // Default make all hidden
+    let textAnimationElements = document.querySelectorAll('[data-nei="show-text"]');
+    let tiltAnimationElements = document.querySelectorAll('[data-nei="tilt"]');
+    let fadeUpAnimationElements = document.querySelectorAll('[data-nei="fade-up"]');
+    let fadeLeftAnimationElements = document.querySelectorAll('[data-nei="fade-left"]');
+
+    if (textAnimationElements) {
+      textAnimationElements.forEach((element) => {
+        let el = element;
+        el.classList.add("hide_animation");
+      });
+    }
+
+    if (tiltAnimationElements) {
+      tiltAnimationElements.forEach((element) => {
+        let el = element;
+        el.classList.add("hide_animation");
+      });
+    }
+
+    if (fadeUpAnimationElements) {
+      fadeUpAnimationElements.forEach((element) => {
+        let el = element;
+        el.classList.add("hide_animation");
+      });
+    }
+
+    if (fadeLeftAnimationElements) {
+      fadeLeftAnimationElements.forEach((element) => {
+        let el = element;
+        el.classList.add("hide_animation");
+      });
+    }
   }
 
   // Handle the scroll
